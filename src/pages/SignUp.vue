@@ -47,7 +47,7 @@
         <PasswordInput v-model="form.password" ref="passwordRef">Password <span class="text-[#571459] border-red-600">*</span></PasswordInput>
       </div>
       <div class="space-y-2">
-        <label class="text-[#6C757D]" for="referral_code">Referral Code <span class="text-[#571459]">*</span></label>
+        <label class="text-[#6C757D]" for="referral_code">Referral Code</label>
         <BaseInput
           v-model="form.referral_code"
           type="text"
@@ -106,7 +106,7 @@ const modelType = ref('')
 const isFormFilled = ref(true)
 
 const handleSubmit = () => {
-  const { first_name, last_name, company_name, email, password } = form.value
+  const { first_name, last_name, company_name, email, password, referral_code } = form.value
   if (first_name && last_name && company_name && email) {
     if(!passwordRef.value.validate()) {
       return
@@ -117,6 +117,7 @@ const handleSubmit = () => {
       company_name,
       email,
       password,
+      referral_code
     };
     router.push('/add-billing-method')
   }

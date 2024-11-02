@@ -13,6 +13,7 @@ export interface Profile {
     company_name: string;
     email: string;
     password: string;
+    referral_code?: string;
 }
 
 export interface SignIn {
